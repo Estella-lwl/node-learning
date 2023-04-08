@@ -8,7 +8,7 @@ const server = http.createServer((request, response) => {
   // 根据拿到的路径动态设置...
   if (pathname === "/") {
     // 设置响应体内容：
-    const file = fs.readFileSync(__dirname + "/node05-练习.html");
+    const file = fs.readFileSync(__dirname + "/index.html");
     response.end(file);
   } else if (pathname === "/index.css") {
     const file = fs.readFileSync(__dirname + "/index.css");
@@ -17,7 +17,7 @@ const server = http.createServer((request, response) => {
     const file = fs.readFileSync(__dirname + "/index.js");
     response.end(file);
   } else {
-    response.statusCode = "404";
+    response.statusCode = 404;
     response.end("pages not found");
   }
 });

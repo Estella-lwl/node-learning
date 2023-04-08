@@ -1,0 +1,10 @@
+.active{
+  display: block;
+  background: rgb(240, 240, 108);
+  width: 300px;
+  height: 300px;
+}
+
+.control_box{
+  display: none; 
+}

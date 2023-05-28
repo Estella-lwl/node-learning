@@ -1,0 +1,19 @@
+{
+  "singers": [
+    {
+      "id": 0,
+      "name": "Taylor Swift",
+      "image_url": "https://example.com/taylor_swift.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Ed Sheeran",
+      "image_url": "https://example.com/ed_sheeran.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Beyoncé",
+      "image_url": "https://example.com/beyonce.jpg"
+    }
+  ]
+}

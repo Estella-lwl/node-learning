@@ -4,3 +4,7 @@ setTimeout(() => {
   box.style.display = "block";
   console.log("执行js中");
 }, 800);
+
+function require(file) {
+  //
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文件上传</title>
+  </head>
+  <body>
+    <h2>文件上传</h2>
+    <h2><%= content %></h2>
+
+    <hr />
+
+    <!-- 上传文件必要属性：enctype="multipart/form-data"（用了这个属性，文件内容才会在请求体中） -->
+    <form action="/avatar" method="post" enctype="multipart/form-data">
+      用户名：<input type="text" name="username" />
+      <br />
+      <!-- 文件上传也是http请求，这里type是file👇🏻 -->
+      头像：<input type="file" name="avatar" />
+      <br />
+      <button>提 交</button>
+    </form>
+  </body>
+</html>

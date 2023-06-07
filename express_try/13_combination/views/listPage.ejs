@@ -5,8 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
+    <link rel="stylesheet" href="/list.css" />
     <style>
+      a {
+        position: absolute;
+        right: -60px;
+        line-height: 26px;
+        outline: none;
+        text-decoration: none;
+        color: #473826;
+      }
+      a:hover {
+        color: #f87676;
+      }
+
       .list_container {
       }
 
@@ -14,10 +26,12 @@
       }
 
       .list_container li {
-        display: flex;
-        /* width: 360px; */
+        text-align: left;
+        list-style: none;
         height: 100px;
         margin: 15px;
+        font-size: 20px;
+        color: #808080;
         background: #f7e1e1;
         -webkit-box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
         box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
@@ -26,8 +40,35 @@
         background: #f9eaea;
       }
 
+      .list_container li p {
+        /* text-align: center; */
+        padding: 0 10px;
+        line-height: 30px;
+        font-size: larger;
+        font-weight: bold;
+        background: #dddef0;
+        color: #d1c03b;
+      }
+
       .list_container li span {
         flex: 1;
+        margin-right: 160px;
+      }
+
+      .money_type_default {
+        padding: 0 6px;
+        width: 30px;
+        height: 20px;
+        background-color: #fcacac;
+        border-radius: 3px;
+      }
+
+      .type {
+        padding: 0 6px;
+        width: 30px;
+        height: 20px;
+        background-color: #95e9b4;
+        border-radius: 3px;
       }
     </style>
   </head>
@@ -37,21 +78,15 @@
 
     <div class="list_container">
       <ul>
+        <% billings.forEach(item=>{ %>
         <li>
-          <span>金额：</span>
-          <span>时间：</span>
-          <span>事项：</span>
+          <p>金额：<%=item.money%>￥</p>
+          <span>日期：<%=item.time%></span>
+          <span class="money_type_default <%=item.type==='1'? 'type' : ''%>"><%=item.type==='1'? '收入' : '支出'%></span>
+          <span>事项：<%=item.title%></span>
+          <a href="/billing/<%= item.id %>"><span>✖</span></a>
         </li>
-        <li>
-          <span>金额：</span>
-          <span>时间：</span>
-          <span>事项：</span>
-        </li>
-        <li>
-          <span>金额：</span>
-          <span>时间：</span>
-          <span>事项：</span>
-        </li>
+        <% }) %>
       </ul>
     </div>
   </body>

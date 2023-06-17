@@ -1,7 +1,7 @@
 // 1.引入db
 const db = require("./db/db");
 const mongoose = require("mongoose");
-const BookModel = require("./modules/BookModule");
+const BookModel = require("./models/BookModel");
 
 // 2.调用
 db(

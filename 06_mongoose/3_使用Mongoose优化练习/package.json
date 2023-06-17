@@ -1,0 +1,23 @@
+{
+  "name": "13-combination",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "http-errors": "~1.6.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "lowdb": "^1.0.0",
+    "shortid": "^2.2.16",
+    "moment": "^2.29.4",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/helper-compilation-targets": "^7.22.5"
+  }
+}

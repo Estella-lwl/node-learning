@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "title": "Example"
+    },
+    {
+      "id": 2,
+      "title": "Example"
+    },
+    {
+      "id": 2,
+      "title": "Example"
+    },
+    {
+      "id": 2,
+      "title": "Example"
+    },
+    {
+      "id": 2,
+      "title": "Example"
+    },
+    {
+      "id": 2,
+      "title": "Example"
+    }
+  ],
+  "use": {}
+}

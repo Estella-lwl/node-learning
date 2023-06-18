@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .form_container {
+        text-align: center;
+      }
+
+      .form_container ul li {
+        display: flex;
+        /* width: 360px; */
+        /* height: 100px; */
+        margin: 15px;
+        /* -webkit-box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2); */
+      }
+      .form_container ul li input {
+        /* border: none; */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>添加</h2>
+
+    <hr />
+    <div class="form_container">
+      <form action="/billing" method="post">
+        <ul>
+          <li>
+            <label for="money">金额： </label>
+            <input type="text" name="money" />
+          </li>
+          <li>
+            <label for="title">事项： </label>
+            <input type="text" name="title" />
+          </li>
+          <li>
+            <label for="time">时间： </label>
+            <input type="date" name="time" />
+          </li>
+          <li>
+            <label for="type">类型： </label>
+            <select name="type" id="">
+              <option value="0">收入</option>
+              <option value="1">支出</option>
+            </select>
+          </li>
+          <li>
+            <label for="remark">备注： </label>
+            <textarea name="remark" id="" cols="30" rows="10"></textarea>
+          </li>
+        </ul>
+
+        <button type="submit">添 加</button>
+      </form>
+    </div>
+  </body>
+</html>

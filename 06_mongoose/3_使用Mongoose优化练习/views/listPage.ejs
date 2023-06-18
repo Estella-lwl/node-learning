@@ -82,7 +82,7 @@
         <li>
           <p>金额：<%=item.money%>￥</p>
           <span>日期：<%=item.time%></span>
-          <span class="money_type_default <%=item.type==='1'? 'type' : ''%>"><%=item.type==='1'? '收入' : '支出'%></span>
+          <span class="money_type_default <%=item.type!== 1 ? 'type' : ''%>"><%=item.type!== 1 ? '收入' : '支出'%></span>
           <span>事项：<%=item.title%></span>
           <a href="/billing/<%= item.id %>"><span>✖</span></a>
         </li>

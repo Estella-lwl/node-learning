@@ -8,21 +8,29 @@
     <link rel="stylesheet" href="/list.css" />
     <style>
       a {
-        position: absolute;
-        right: -60px;
-        line-height: 26px;
         outline: none;
         text-decoration: none;
         color: #473826;
       }
+
       a:hover {
         color: #f87676;
       }
 
-      .list_container {
+      .header {
+        display: flex;
+        /* flex-direction: row; */
+        justify-content: space-between;
+        padding: 0 20px;
       }
-
-      .list_container ul {
+      .header a {
+        display: inline-block;
+        text-align: center;
+        width: 110px;
+        background: #91d9dc;
+        color: #3b6162;
+        font-size: 18px;
+        border-radius: 20px;
       }
 
       .list_container li {
@@ -55,6 +63,12 @@
         margin-right: 160px;
       }
 
+      .list_container a {
+        position: absolute;
+        right: -60px;
+        line-height: 26px;
+      }
+
       .money_type_default {
         padding: 0 6px;
         width: 30px;
@@ -73,7 +87,10 @@
     </style>
   </head>
   <body>
-    <h2>列表</h2>
+    <div class="header">
+      <h2>列表</h2>
+      <h2><a href="/billing/add">添加账单</a></h2>
+    </div>
     <hr />
 
     <div class="list_container">
@@ -81,13 +98,29 @@
         <% billings.forEach(item=>{ %>
         <li>
           <p>金额：<%=item.money%>￥</p>
-          <span>日期：<%=item.time%></span>
+          <!-- <span>日期：<%=item.time.toLocaleDateString()%></span> -->
+          <!-- 或👇🏻 -->
+          <span>日期：<%=moment(item.time).format("YYYY-MM-DD")%></span>
           <span class="money_type_default <%=item.type!== 1 ? 'type' : ''%>"><%=item.type!== 1 ? '收入' : '支出'%></span>
           <span>事项：<%=item.title%></span>
-          <a href="/billing/<%= item.id %>"><span>✖</span></a>
+          <a class="confirm" href="/billing/<%= item._id %>"><span>✖</span></a>
         </li>
         <% }) %>
       </ul>
     </div>
   </body>
+
+  <script>
+    const confirmBtn = document.querySelectorAll(".confirm");
+    confirmBtn.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        if (confirm("确定删除？")) {
+          return true;
+        } else {
+          // 阻止默认行为
+          e.preventDefault();
+        }
+      });
+    });
+  </script>
 </html>

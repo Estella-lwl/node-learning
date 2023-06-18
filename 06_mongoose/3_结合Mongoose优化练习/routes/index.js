@@ -28,7 +28,8 @@ router.get("/billing", (req, res, next) => {
     .sort({ time: -1 })
     .exec()
     .then((data) => {
-      res.render("listPage", { billings: data });
+      // 注意：ejs文件中使用moment需要先传过去：
+      res.render("listPage", { billings: data, moment: moment });
     });
 });
 
@@ -67,7 +68,10 @@ router.post("/billing", (req, res, next) => {
 // 删除记录
 router.get("/billing/:id", (req, res) => {
   let id = req.params.id; // 获取params参数
-  db.get("billing").remove({ id: id }).write(); // 删除
+  // db.get("billing").remove({ id: id }).write(); // 删除(lowdb的方式)
+  BillingModel.deleteOne({ id: id }).then((data) => {
+    console.log("data", data);
+  });
   res.render("success", { msg: "删除成功!! ", url: "/billing" }); // 设置提醒
 });
 

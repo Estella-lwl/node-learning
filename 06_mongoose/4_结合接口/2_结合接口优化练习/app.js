@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var indexRouter = require("./routes/web/index.js");
 const billingRouter = require("./routes/api/billing.js");
+const authRouter = require("./routes/web/auth");
 
 var app = express();
 
@@ -19,6 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+app.use("/", authRouter);
 app.use("/api", billingRouter); // 加前缀；这样访问billingRouter中的路由规则时必须加前缀
 
 // catch 404 and forward to error handler
